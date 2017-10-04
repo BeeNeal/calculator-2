@@ -15,48 +15,55 @@ def calculate(user_input):
 
     tokens = user_input.split(" ")
     answer = "I don't understand."
-    num1 = float(tokens[1])
-    try:
-        num2 = float(tokens[2])
-        num2 = float(tokens[3])
-    except:
-        pass
-    # print tokens
+
     for i in tokens[1:]:
         try:
             float(i)
         except:
             return answer
 
+    try:
+        num1 = float(tokens[1])
+    except:
+        pass
+    try:
+        num2 = float(tokens[2])
+    except:
+        pass
+    try:
+        num3 = float(tokens[3])
+    except:
+        pass
+
     if tokens[0] == "+":
-        answer = add(float(tokens[1]), float(tokens[2]))
+        answer = add(num1, num2)
 
     elif tokens[0] == "-":
-        answer = subtract(float(tokens[1]), float(tokens[2]))
+        answer = subtract(num1, num2)
 
     elif tokens[0] == "*":
-        answer = multiply(float(tokens[1]), float(tokens[2]))
+        answer = multiply(num1, num2)
 
     elif tokens[0] == "/":
-        answer = divide(float(tokens[1]), float(tokens[2]))
+        answer = divide(num1, num2)
 
     elif tokens[0] == "square":
-        answer = square(float(tokens[1]))
+        answer = square(num1)
 
     elif tokens[0] == "cube":
-        answer = cube(float(tokens[1]))
+        answer = cube(num1)
 
     elif tokens[0] == "pow":
-        answer = power(float(tokens[1]), float(tokens[2]))
+        answer = power(num1, num2)
 
     elif tokens[0] == "mod":
-        answer = mod(float(tokens[1]), float(tokens[2]))
+        answer = mod(num1, num2)
 
     elif tokens[0] == "add_mult":
-        answer = add_mult(float(tokens[1]), float(tokens[2]), float(tokens[3]))
+        answer = add_mult(num1, num2, num3)
 
     elif tokens[0] == "add_cubes":
-        answer = add_cubes(float(tokens[1]), float(tokens[2]))
+        answer = add_cubes(num1, num2)
 
 
 
