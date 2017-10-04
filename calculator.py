@@ -15,6 +15,12 @@ def calculate(user_input):
 
     tokens = user_input.split(" ")
     answer = "I don't understand."
+    num1 = float(tokens[1])
+    try:
+        num2 = float(tokens[2])
+        num2 = float(tokens[3])
+    except:
+        pass
     # print tokens
     for i in tokens[1:]:
         try:
